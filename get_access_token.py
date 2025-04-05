@@ -9,7 +9,7 @@ client_id = os.getenv("SPLITWISE_CLIENT_ID")
 client_secret = os.getenv("SPLITWISE_CLIENT_SECRET")
 
 # Authorization code (from the Flask server output)
-auth_code = "your_authorization_code_here"  # Replace with the code you copied
+auth_code = "LF73OHC1d13IZOmDAbpc"  # Replace with the code you copied
 
 # OAuth 2.0 token endpoint
 token_url = "https://secure.splitwise.com/oauth/token"
