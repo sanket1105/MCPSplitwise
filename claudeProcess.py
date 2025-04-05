@@ -43,10 +43,10 @@ image_data = base64.b64encode(jpeg_data).decode("utf-8").replace("\n", "")
 # Get today's date in YYYY-MM-DD format
 today_date = datetime.datetime.now().strftime("%Y-%m-%d")
 
-# Craft the prompt for Claude
+# Craft the prompt for Claude (simplified to match Apoorv’s style)
 prompt = f"""
-You are a bill-splitting assistant. Process the attached restaurant bill image and do the following:
-1. Extract each item and its price from the bill.
+Process the attached restaurant bill image and do the following:
+1. Extract each item and its price from the bill (for the expense description).
 2. Calculate the total amount.
 3. Split the total equally among the members of the Splitwise group "Test". Assume there are 2 members in the group for now.
 4. Create an expense entry for the group with today's date ({today_date}).
@@ -99,7 +99,6 @@ print(raw_response_text)
 
 # Extract JSON portion
 try:
-    # Look for the first JSON block between { and }
     json_match = re.search(r"({.*})", raw_response_text, re.DOTALL)
     if json_match:
         json_text = json_match.group(1)
